@@ -130,6 +130,38 @@
           </div>
         </form>
 
+        <div class="form-group row">
+          <div class="col-sm-10" Align="center">
+            <button type="submit" class="btn btn-primary">ADD</button>
+            <button type="submit" class="btn btn-primary">EDIT</button>
+            <button type="submit" class="btn btn-primary">DELETE</button>
+          </div>
+        </div>
+      </form>
+
+      <table class="table table-sm table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Radio Number</th>
+            <th>Station Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="c in certifications" @click="handleRowClick(c)">
+            <td>{{ c.certId }}</td>
+            <td>{{ c.name }}</td>
+            <td>{{ c.agency }}</td>
+            <td>{{ c.defaultExpiration }}</td>
+            <td>{{ c.inputStationNum }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="js/waiting.app.js"></script>
   <script src="js/record.app.js"></script>
