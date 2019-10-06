@@ -27,36 +27,31 @@
   </div>
 </nav>
 
-<div id="patientRecordsApp">
+<h2 align="center">OCFR Certifications</h2>
+
+<div id="certificationApp">
   <form @submit.prevent="handleSubmit">
+
     <div class="form-group row">
-      <label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
+      <label for="inputName" class="col-sm-2 col-form-label">Name</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" v-model="recordPatient.firstName">
+        <input type="text" class="form-control" id="inputName" placeholder="Certification Name" v-model="recordPatient.lastName">
       </div>
     </div>
 
     <div class="form-group row">
-      <label for="inputLastName" class="col-sm-2 col-form-label">Last Name</label>
+      <label for="inputAgency" class="col-sm-2 col-form-label">Agency</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" v-model="recordPatient.lastName">
+        <input type="text" class="form-control" id="inputAgency" placeholder="Agency" v-model="recordPatient.dob">
       </div>
     </div>
 
     <div class="form-group row">
-      <label for="inputDob" class="col-sm-2 col-form-label">DOB</label>
+      <label for="inputDefaultExpiration" class="col-sm-2 col-form-label">Default Expiration</label>
       <div class="col-sm-10">
-        <input type="date" class="form-control" id="inputDob" placeholder="2001-12-13" v-model="recordPatient.dob">
+        <input type="text" class="form-control" id="inputDefaultExpiration" placeholder="Years" v-model="recordPatient.sexAtBirth">
       </div>
     </div>
-
-    <div class="form-group row">
-      <label for="inputSexAtBirth" class="col-sm-2 col-form-label">Sex At Birth</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputSexAtBirth" placeholder="M/F" v-model="recordPatient.sexAtBirth">
-      </div>
-    </div>
-
 
     <div class="form-group row">
       <div class="col-sm-10" Align="center">
@@ -70,33 +65,24 @@
   <table class="table table-sm table-hover">
     <thead>
       <tr>
-        <th>GUID</th>
-        <th>First</th>
-        <th>Last</th>
-        <th>DOB</th>
-        <th>SAB</th>
+        <th>certId</th>
+        <th>Name</th>
+        <th>Agency</th>
+        <th>Default Expiration</th>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="p in patients" @click="handleRowClick(p)">
-        <td>{{ p.patientGuid }}</td>
-        <td>{{ p.firstName }}</td>
-        <td>{{ p.lastName }}</td>
-        <td>{{ p.dob }}</td>
-        <td>{{ p.sexAtBirth }}</td>
+      <tr v-for="c in certifications" @click="handleRowClick(p)">
+        <td>{{ c.certId }}</td>
+        <td>{{ c.name }}</td>
+        <td>{{ c.agency }}</td>
+        <td>{{ c.defaultExpiration }}</td>
       </tr>
     </tbody>
   </table>
 </div>
 
-
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="js/waiting.app.js"></script>
-  <script src="js/record.app.js"></script>
-  <script src="js/triage.app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!--  <script src="js/certification.app.js"></script>-->
 </body>
 </html>
