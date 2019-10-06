@@ -4,9 +4,7 @@
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$stmt = $db->prepare(
-  'SELECT *
-  FROM certifications' );
+$stmt = $db->prepare('SELECT * FROM certifications');
 $stmt->execute();
 $patients = $stmt->fetchAll();
 
