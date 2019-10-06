@@ -156,7 +156,7 @@
     "personId": "SOME-REALLY-LONG-1234",
     "certId": "cert-9-9-9",
     "dateReceived": "2018-08-01",
-    "dateExpired": "2018-08-01"
+    "dateExpired": "2020-08-01"
   },
   {
     "personId": "SOME-REALLY-LONG-1234",
@@ -198,8 +198,8 @@
   {
     "personId": "SOME-UNIQUE-ABCDE1",
     "certId": "cert-6-6-6",
-    "dateReceived": "2016-09-01",
-    "dateExpired": "2019-09-01"
+    "dateReceived": "2017-09-01",
+    "dateExpired": "2020-09-01"
   },
   {
     "personId": "SOME-UNIQUE-ABCDE1",
