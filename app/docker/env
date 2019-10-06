@@ -1,7 +1,0 @@
-# Copy this file and rename it `env`
-# Do NOT ever include your *real* env in version control
-
-MYSQL_DATABASE=ocfr
-MYSQL_HOST=msis.ctb7si7iofl3.us-east-1.rds.amazonaws.com
-MYSQL_USER=masterusername
-MYSQL_PASSWORD=Beanyo22!
