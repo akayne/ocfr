@@ -1,13 +1,13 @@
 var certificationApp = new Vue({
   el: '#certificationApp',
   data: {
-    certificaitons: [],
+    certifications: [],
     recordCertification: {}
   },
 
-  methods: {
+methods: {
     fetchCertifications() {
-      fetch('api/record/')
+      fetch('api/records/')
       .then(response => response.json())
       .then(json => { certificationRecordsApp.certifications = json })
     },
@@ -22,9 +22,6 @@ var certificationApp = new Vue({
         defaultExpiration: ''
       }
     },
-  /*  handleRowClick(patient) {
-      patientTriageApp.patient = patient;
-    }*/
   }, // end methods
 
   created() {
