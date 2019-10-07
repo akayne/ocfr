@@ -6,7 +6,7 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 $stmt = $db->prepare('SELECT * FROM certifications');
 $stmt->execute();
-$patients = $stmt->fetchAll();
+$certifications = $stmt->fetchAll();
 
 // patientGuid VARCHAR(64) PRIMARY KEY,
 // firstName VARCHAR(64),
@@ -15,7 +15,7 @@ $patients = $stmt->fetchAll();
 // sexAtBirth CHAR(1) DEFAULT ''
 
 // Step 3: Convert to JSON
-$json = json_encode($certications, JSON_PRETTY_PRINT);
+$json = json_encode($certifications, JSON_PRETTY_PRINT);
 
 // Step 4: Output
 header('Content-Type: application/json');
