@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
   <title>My Page Title</title>
@@ -7,6 +6,7 @@
   <link rel="stylesheet" href="css/ocfr.css">
 </head>
 <body>
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="index.html">Homepage</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,26 +30,28 @@
 <h2 align="center">OCFR Certifications</h2>
 
 <div id="certificationApp">
+
   <form @submit.prevent="handleSubmit">
 
+  <form>
     <div class="form-group row">
       <label for="inputName" class="col-sm-2 col-form-label">Name</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputName" placeholder="Certification Name" v-model="recordPatient.lastName">
+        <input type="text" class="form-control" id="inputName" placeholder="Certification Name">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="inputAgency" class="col-sm-2 col-form-label">Agency</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputAgency" placeholder="Agency" v-model="recordPatient.dob">
+        <input type="text" class="form-control" id="inputAgency" placeholder="Agency" >
       </div>
     </div>
 
     <div class="form-group row">
       <label for="inputDefaultExpiration" class="col-sm-2 col-form-label">Default Expiration</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputDefaultExpiration" placeholder="Years" v-model="recordPatient.sexAtBirth">
+        <input type="text" class="form-control" id="inputDefaultExpiration" placeholder="Years" >
       </div>
     </div>
 
@@ -62,7 +64,7 @@
     </div>
   </form>
 
-  <table class="table table-sm table-hover">
+  <table class="table table-sm table-hover" id="certificationApp">
     <thead>
       <tr>
         <th>certId</th>
@@ -72,7 +74,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="c in certifications" @click="handleRowClick(c)">
+      <tr v-for="c in certifications">
         <td>{{ c.certId }}</td>
         <td>{{ c.name }}</td>
         <td>{{ c.agency }}</td>

@@ -1,34 +1,17 @@
 var certificationApp = new Vue({
   el: '#certificationApp',
   data: {
-    certificaitons: [],
-    recordCertification: {}
+    certifications: []
   },
 
   methods: {
-    fetchCertifications() {
-      fetch('api/record/')
+    fetchcertifications() {
+      fetch('api/records/')
       .then(response => response.json())
-      .then(json => { certificationRecordsApp.certifications = json })
-    },
-    handleSubmit(event) {
-      this.certifications.push( this.recordCertification );
-      this.handleReset();
-    },
-    handleReset() {
-      this.recordCertification = {
-        name: '',
-        agency: '',
-        defaultExpiration: ''
-      }
-    },
-  /*  handleRowClick(patient) {
-      patientTriageApp.patient = patient;
-    }*/
-  }, // end methods
-
+      .then(json => { certificationApp.certifications = json })
+  }
+},
   created() {
-    this.handleReset();
-    this.fetchCertifications();
+    this.fetchcertifications();
   }
 });

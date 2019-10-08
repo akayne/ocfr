@@ -5,7 +5,7 @@
     "lastName": "Pryde",
     "radioNumber": "A-1",
     "stationNumber": "all",
-    "isActive": TRUE,
+    "isActive": "TRUE",
     "address": "1123 Xavier School Drive, Watkinsville, GA 30677",
     "email": "kpryde@ocfr.com",
     "phone": "7075551234",
@@ -20,7 +20,7 @@
     "lastName": "Rasputin",
     "radioNumber": "841",
     "stationNumber": "8",
-    "isActive": TRUE,
+    "isActive": "TRUE",
     "address": "A31 Mother Russia Road, Seattle, WA 98133",
     "email": "prasputin@ocfr.com",
     "phone": "2065559876",
@@ -35,7 +35,7 @@
     "lastName": "Worthington III",
     "radioNumber": "122",
     "stationNumber": "1",
-    "isActive": TRUE,
+    "isActive": "TRUE",
     "address": "1140 Experiment Station Rd, Watkinsville, GA",
     "email": "wworthington@ocfr.com",
     "phone": "7065553945",
@@ -43,24 +43,9 @@
     "startDate": "2017-08-15",
     "gender": "Male",
     "position": "Firefighter"
-  }
-]
+  },
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-[
   {
     "certId": "1",
     "name": "CPR for Healthcare Providers",
@@ -136,8 +121,7 @@
     "name": "Extrication",
     "agency": "Athens Technical College",
     "defaultExpiration": ""
-  }
-]
+  },
 
 
 
@@ -151,7 +135,7 @@
 
 
 
-[
+
   {
     "personId": "1",
     "certId": "9",
@@ -203,7 +187,7 @@
   },
   {
     "personId": "3",
-    "certId": "cert-1-1-1",
+    "certId": "1",
     "dateReceived": "2018-07-01",
     "dateExpired": "2020-07-01"
   },
