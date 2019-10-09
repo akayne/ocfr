@@ -7,7 +7,7 @@ var employeesApp = new Vue({
 
   methods: {
     fetchemployees() {
-      fetch('api/records/')
+      fetch('api/employee/')
       .then(response => response.json())
       .then(json => { employeesApp.employees = json })
   }
