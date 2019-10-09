@@ -13,6 +13,7 @@
   <meta charset="utf-8">
 </head>
 <body>
+<!--
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="index.html">Homepage</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,100 +33,101 @@
     </ul>
   </div>
 </nav>
-
+-->
 <div class="container">
   <div class="row">
     <div id="mainContent" class="col-md">
-      <div id="patientRecordsApp">
+      <div id="employeesApp">
+        <!--
         <form @submit.prevent="handleSubmit">
           <div class="form-group row">
             <label for="inputPersonId" class="col-sm-2 col-form-label">Personnel ID</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputPersonId" placeholder="ID" v-model="recordPatient.firstName">
+              <input type="text" class="form-control" id="inputPersonId" placeholder="ID" >
             </div>
           </div>
 
           <div class="form-group row">
             <label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" v-model="recordPatient.firstName">
+              <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" >
             </div>
           </div>
 
           <div class="form-group row">
             <label for="inputLastName" class="col-sm-2 col-form-label">Last Name</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" v-model="recordPatient.lastName">
+              <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" >
             </div>
           </div>
 
           <div class="form-group row">
             <label for="inputRadioNum" class="col-sm-2 col-form-label">Radio Number</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputRadioNum" placeholder="Radio #" v-model="recordPatient.lastName">
+              <input type="text" class="form-control" id="inputRadioNum" placeholder="Radio #" >
             </div>
           </div>
 
           <div class="form-group row">
             <label for="inputStationNum" class="col-sm-2 col-form-label">Sation Number</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputStationNum" placeholder="Station #" v-model="recordPatient.lastName">
+              <input type="text" class="form-control" id="inputStationNum" placeholder="Station #" >
             </div>
           </div>
 
           <div class="form-group row">
             <label for="inputIsActive" class="col-sm-2 col-form-label">Sation Number</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputIsActive" placeholder="Active/Retired?" v-model="recordPatient.lastName">
+              <input type="text" class="form-control" id="inputIsActive" placeholder="Active/Retired?" >
             </div>
           </div>
 
           <div class="form-group row">
             <label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputAddress" placeholder="Address" v-model="recordPatient.lastName">
+              <input type="text" class="form-control" id="inputAddress" placeholder="Address" >
             </div>
           </div>
 
           <div class="form-group row">
             <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputEmail" placeholder="@" v-model="recordPatient.lastName">
+              <input type="text" class="form-control" id="inputEmail" placeholder="@" >
             </div>
           </div>
 
           <div class="form-group row">
             <label for="inputPhone" class="col-sm-2 col-form-label">Phone Number</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputPhone" placeholder="(***) ***-****" v-model="recordPatient.lastName">
+              <input type="text" class="form-control" id="inputPhone" placeholder="(***) ***-****" >
             </div>
           </div>
 
           <div class="form-group row">
             <label for="inputDob" class="col-sm-2 col-form-label">DOB</label>
             <div class="col-sm-10">
-              <input type="date" class="form-control" id="inputDob" placeholder="2001-12-13" v-model="recordPatient.dob">
+              <input type="date" class="form-control" id="inputDob" placeholder="2001-12-13" >
             </div>
           </div>
 
           <div class="form-group row">
             <label for="inputStart" class="col-sm-2 col-form-label">Start Date</label>
             <div class="col-sm-10">
-              <input type="date" class="form-control" id="inputStart" placeholder="????-??-??" v-model="recordPatient.dob">
+              <input type="date" class="form-control" id="inputStart" placeholder="????-??-??" >
             </div>
           </div>
 
           <div class="form-group row">
             <label for="inputGender" class="col-sm-2 col-form-label">Gender</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputGender" placeholder="M|F" v-model="recordPatient.sexAtBirth">
+              <input type="text" class="form-control" id="inputGender" placeholder="M|F" >
             </div>
           </div>
 
           <div class="form-group row">
             <label for="inputPosition" class="col-sm-2 col-form-label">Position Title</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputPosition" placeholder="Position" v-model="recordPatient.sexAtBirth">
+              <input type="text" class="form-control" id="inputPosition" placeholder="Position" >
             </div>
           </div>
 
@@ -144,8 +146,8 @@
           </div>
         </div>
       </form>
-
-      <table class="table table-sm table-hover">
+-->
+      <table class="table table-sm table-hover" id="employeesApp">
         <thead>
           <tr>
             <th>ID</th>
@@ -156,12 +158,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="c in certifications" @click="handleRowClick(c)">
-            <td>{{ c.certId }}</td>
-            <td>{{ c.name }}</td>
-            <td>{{ c.agency }}</td>
-            <td>{{ c.defaultExpiration }}</td>
-            <td>{{ c.inputStationNum }}</td>
+          <tr v-for="e in employees" @click="handleRowClick(e)">
+            <td>{{ e.personId }}</td>
+            <td>{{ e.firstName }}</td>
+            <td>{{ e.lastName }}</td>
+            <td>{{ e.radioNumber }}</td>
+            <td>{{ e.stationNumber }}</td>
+
           </tr>
         </tbody>
       </table>
@@ -169,8 +172,7 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="js/waiting.app.js"></script>
-  <script src="js/record.app.js"></script>
-  <script src="js/triage.app.js"></script>
+  <script src="js/employee.app.js"></script>
+
 </body>
 </html>
