@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-<!--<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name"> -->
 <head>
   <meta charset="utf-8">
-  <title>My Page Title</title>
+  <title>Employee Details</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="css/ocfr.css">
   <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
@@ -43,72 +41,38 @@
          }
       </style>
    </head>
+<div id="detailsApp">
 
 <h1 style="color:black" align="center"> OCFR Certification Details </h1>
-<p1></p1>
 
-<table id="myTable"; table border="5" width="50%" cellpadding="4" align="center">
+
+<table table border="5" width="50%" cellpadding="4" align="center">
 
 <H3 align="center">Table of All Members and Certification Details</H3>
-
-<tr>
-          <th>Member Name</th>
-          <th>Certification Name</th>
-          <th>Data Achieved</th>
-          <th>Expiration Date</th>
-</tr>
+<table class="table table-sm table-hover" id="employeesApp">
+  <thead>
+    <tr>
+              <th>Member Name</th>
+              <th>Certification Name</th>
+              <th>Data Achieved</th>
+              <th>Expiration Date</th>
+    </tr>
+  </thead>
   <tbody>
-      <tr>
-          <td>1</td>
-          <td>1</td>
-          <td>1</td>
-          <td>1</td>
-      </tr>
-      <tr>
-         <td>1</td>
-         <td>1</td>
-         <td>1</td>
-         <td>1</td>
-      </tr>
-      <tr>
-          <td>1</td>
-          <td>1</td>
-          <td>1</td>
-          <td>1</td>
-      </tr>
-      <tr>
-         <td>1</td>
-         <td>1</td>
-         <td>1</td>
-         <td>1</td>
-      </tr>
+        <tr v-for="d in details" @click="handleRowClick(d)">
+              <td>{{ d.personId }}</td>
+              <td>{{ d.certId }}</td>
+              <td>{{ d.dateReceived }}</td>
+              <td>{{ d.dateExpired }}</td>
+        </tr>
 
   </tbody>
-</table>
+  </table>
+</div>
 
-<script>
-function myFunction() {
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}
-</script>​
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="js/waiting.app.js"></script>
-  <script src="js/record.app.js"></script>
-  <script src="js/triage.app.js"></script>
+  <script src="js/details.app.js"></script>
+
 </body>
 </html>
