@@ -3,7 +3,7 @@ color:black
 }
 
 h1{
-    color: grey;
+    color: black;
     font-size: 30px;
     font-weight: bold;
 }
@@ -19,18 +19,12 @@ h3{
     font-weight: bold;
   }
 
-.bolding{
-color: black;
-background-color: white;
-font-weight: bold;
-}
-
-img {
-  height: 600px;
-  width:700px;
-}
-
-
 a {
   color: Black;
+}
+
+.center {
+  display: run-in;
+  margin-left: auto;
+  margin-right: auto;
 }
