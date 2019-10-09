@@ -37,12 +37,12 @@
 
 <div id="certificationApp">
 
-  <form @submit.prevent="handleSubmit">
+  <form>
 
     <div class="form-group row">
       <label for="inputName" class="col-sm-2 col-form-label">Name</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputName" placeholder="Certification Name">
+        <input type="text" class="form-control" id="inputName" placeholder="Certification Name" v-model=".name">
       </div>
     </div>
 
@@ -62,7 +62,7 @@
 
     <div class="form-group row">
       <div class="col-sm-10" Align="center">
-        <button type="submit" class="btn btn-primary">ADD</button>
+        <button type="submit" class="btn btn-primary" @submit.prevent="handleCreate">ADD</button>
         <button type="submit" class="btn btn-primary">EDIT</button>
         <button type="submit" class="btn btn-primary">DELETE</button>
       </div>
