@@ -1,3 +1,4 @@
+
 var employeesApp = new Vue({
   el: '#employeesApp',
   data: {
@@ -6,7 +7,7 @@ var employeesApp = new Vue({
 
   methods: {
     fetchemployees() {
-      fetch('api/employee/')
+      fetch('api/records/')
       .then(response => response.json())
       .then(json => { employeesApp.employees = json })
   }
