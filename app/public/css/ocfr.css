@@ -24,7 +24,6 @@ a {
 }
 
 .center {
-  display: run-in;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 10px auto 20px;
+  display: block;
 }
