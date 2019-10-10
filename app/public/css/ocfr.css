@@ -4,7 +4,7 @@ color:black
 
 h1{
     color: black;
-    font-size: 30px;
+    font-size: 50px;
     font-weight: bold;
 }
 
@@ -13,10 +13,16 @@ p{
   font-size: 15px;
 }
 
+h2{
+    color: Black;
+    font-size: 40px;
+    font-weight: bold;
+  }
+
 h3{
     color: Black;
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 25px;
+    font-style: italic;
   }
 
 a {
@@ -26,4 +32,21 @@ a {
 .center {
   margin: 10px auto 20px;
   display: block;
+}
+
+.column {
+  float: center;
+  width: 33.33%;
+  padding: 2px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+div {
+  padding-right: 10px;
+  padding-left: 10px;
 }
