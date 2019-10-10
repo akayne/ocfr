@@ -10,6 +10,13 @@ var employeesApp = new Vue({
       fetch('api/employee/')
       .then(response => response.json())
       .then(json => { employeesApp.employees = json })
+<<<<<<< HEAD
+=======
+  },
+
+  created() {
+    this.fetchemployees();
+>>>>>>> 793092421eae9be765c1fd89cfd7272bf0c86555
   },
 
 
@@ -67,4 +74,16 @@ var employeesApp = new Vue({
       this.handleReset();
       this.fetchemployees();
     }
+<<<<<<< HEAD
+=======
+  })
+  .then( response => response.json() )
+  .then( json => { employeesApp.employees.push( json[0] ) })
+  .catch( err => {
+    console.error('RECORD POST ERROR:');
+    console.error(err);
+  });
+  }
+}
+>>>>>>> 793092421eae9be765c1fd89cfd7272bf0c86555
 });
