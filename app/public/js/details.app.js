@@ -9,7 +9,7 @@ var detailsApp = new Vue({
     fetchdetails() {
       fetch('api/details/')
       .then(response => response.json())
-      .then(json => { employeesApp.details = json })
+      .then(json => { detailsApp.details = json })
   }
 },
   created() {

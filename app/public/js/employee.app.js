@@ -2,7 +2,8 @@
 var employeesApp = new Vue({
   el: '#employeesApp',
   data: {
-    employees: []
+    employees: [],
+    recordemployee: {}
   },
 
   methods: {
@@ -14,5 +15,17 @@ var employeesApp = new Vue({
 },
   created() {
     this.fetchemployees();
+  },
+
+
+
+handleAdd(event) {
+  fetch('api/employee/post.php', {
+    method:'POST',
+    body: JSON.stringify(this.recordemployee),
+    headers: {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  })
   }
 });
