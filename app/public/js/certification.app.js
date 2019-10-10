@@ -32,4 +32,5 @@ var certificationApp = new Vue({
   created() {
     this.fetchcertifications();
   }
+}
 });

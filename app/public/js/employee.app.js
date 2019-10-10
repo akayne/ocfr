@@ -1,4 +1,3 @@
-
 var employeesApp = new Vue({
   el: '#employeesApp',
   data: {
@@ -11,8 +10,8 @@ var employeesApp = new Vue({
       fetch('api/employee/')
       .then(response => response.json())
       .then(json => { employeesApp.employees = json })
-  }
-},
+  },
+
   created() {
     this.fetchemployees();
   },
@@ -27,5 +26,12 @@ handleAdd(event) {
       "Content-Type": "application/json; charset=utf-8"
     }
   })
+  .then( response => response.json() )
+  .then( json => { employeesApp.employees.push( json[0] ) })
+  .catch( err => {
+    console.error('RECORD POST ERROR:');
+    console.error(err);
+  });
   }
+}
 });
