@@ -42,21 +42,21 @@
     <div class="form-group row">
       <label for="inputName" class="col-sm-2 col-form-label">Name</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputName" placeholder="Certification Name" v-model=".name">
+        <input type="text" class="form-control" id="inputName" placeholder="Certification Name" v-model="recordCertif.name">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="inputAgency" class="col-sm-2 col-form-label">Agency</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputAgency" placeholder="Agency" >
+        <input type="text" class="form-control" id="inputAgency" placeholder="Agency" v-model="recordCertif.agency">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="inputDefaultExpiration" class="col-sm-2 col-form-label">Default Expiration</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputDefaultExpiration" placeholder="Years" >
+        <input type="text" class="form-control" id="inputDefaultExpiration" placeholder="Years" v-model="recordCertif.defaultExpiration">
       </div>
     </div>
 
