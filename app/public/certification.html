@@ -37,7 +37,7 @@
 
 <div id="certificationApp">
 
-  <form>
+  <form @submit.prevent="handleCreate">
 
     <div class="form-group row">
       <label for="inputName" class="col-sm-2 col-form-label">Name</label>
@@ -62,7 +62,7 @@
 
     <div class="form-group row">
       <div class="col-sm-10" Align="center">
-        <button type="submit" class="btn btn-primary" @submit.prevent="handleCreate">ADD</button>
+        <button type="submit" class="btn btn-primary">ADD</button>
         <button type="submit" class="btn btn-primary">EDIT</button>
         <button type="submit" class="btn btn-primary">DELETE</button>
       </div>
@@ -79,7 +79,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="c in certifications">
+      <tr v-for="c in certifications" @click="handleRowClick(c)">
         <td>{{ c.certId }}</td>
         <td>{{ c.name }}</td>
         <td>{{ c.agency }}</td>
