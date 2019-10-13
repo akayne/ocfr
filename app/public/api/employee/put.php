@@ -8,9 +8,7 @@ $db = DbConnection::getConnection();
 
 // Step 2: Prepare & run the query
 $stmt = $db->prepare(
-  'INSERT INTO employees
-    (personId, firstName, lastName, radioNumber, stationNumber,isActive, address,email,phone,dob,startDate,gender,position)
-  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)'
+  'UPDATE employees'
 );
 
 $guid = Uuid::uuid4()->toString();
@@ -21,14 +19,7 @@ $stmt->execute([
   $_POST['lastName'],
   $_POST['radioNumber'],
   $_POST['stationNumber'],
-  $_POST['isActive'],
-  $_POST['address'],
-  $_POST['email'],
-  $_POST['phone'],
-  $_POST['dob'],
-  $_POST['startDate'],
-  $_POST['gender'],
-  $_POST['position']
+
 
 
 ]);
