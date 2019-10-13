@@ -50,3 +50,13 @@ div {
   clear: both;
   display: table;
 }
+
+.footer {
+  left: 0;
+  bottom: 0;
+  padding: 2px;
+  width: 100%;
+  background-color: white;
+  color: black;
+  text-align: center;
+}
