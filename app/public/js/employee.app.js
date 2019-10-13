@@ -43,7 +43,7 @@ var employeesApp = new Vue({
   }
 },
     created() {
-      //this.handleReset();
+      this.handleReset();
       this.fetchemployees();
 
     }
