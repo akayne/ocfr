@@ -79,7 +79,6 @@
       </div>
     </div>
 
-
     <div class="form-group row">
       <label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
       <div class="col-sm-10">
@@ -160,6 +159,39 @@
         </tbody>
       </table>
     </div>
+
+
+
+            <div id="employeesApp">
+              <noscript>This page REQUIRES Javascript!</noscript>
+              <form @submit.prevent="handleEdit">
+                <div class="row">
+                  <div class="form-group col-md-4">
+                    <input type="text" class="form-control" id="employeesId" placeholder="8" v-model="employees.personId" readonly>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <input type="text" class="form-control" id="employeesFirstName" placeholder="First Name" v-model="employees.firstName" >
+                  </div>
+                  <div class="form-group col-md-4">
+                    <input type="text" class="form-control" id="employeesLastName" placeholder="Last Name" v-model="employees.lastName" >
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="form-group col-md-3">
+                    <input type="text" class="form-control" id="employeeRadioNumber" placeholder="825"  v-model="employees.radioNumber" >
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-3">
+                    <input type="text" class="form-control" id="employeeStationNumber" placeholder="10" v-model="employees.stationNumber" >
+                  </div>
+                </div>
+              </form>
+            </div>
+
+
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
