@@ -35,10 +35,15 @@ var certificationApp = new Vue({
         agency: '',
         defaultExpiration: ''
       }
+    },
+
+    handleRowClick(certifData) {
+      certifEditApp.certifData = certifData;
     }
   },//end of methods
 
   created() {
+    this.handleReset();
     this.fetchcertifications();
   }
 });
