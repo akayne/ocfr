@@ -20,13 +20,18 @@ h2{
   }
 
 h3{
-    color: Black;
+    color: black;
     font-size: 25px;
     font-style: italic;
   }
 
 a {
   color: Black;
+}
+
+div {
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .center {
@@ -44,9 +49,4 @@ a {
   content: "";
   clear: both;
   display: table;
-}
-
-div {
-  padding-right: 10px;
-  padding-left: 10px;
 }
