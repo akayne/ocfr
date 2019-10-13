@@ -1,28 +1,23 @@
 var employeesEditApp = new Vue({
   el: '#employeesEditApp',
   data: {
-    employeesEdit: []
+    employeeData: {}
   },
 
   methods: {
-    handleEdit(event) {
-      fetch('api/employee/post.php', {
+    handleEdit() {
+      fetch('api/waiting/post.php', {
         method:'POST',
-        body: JSON.stringify(this.employeesEdit),
+        body: JSON.stringify(this.employeeData),
         headers: {
           "Content-Type": "application/json; charset=utf-8"
         }
       })
-      .then( response => response.json() )
-      .then( json => { employeesEditApp.employeesEdit=json })
-      .catch( err => {
-        console.error('RECORD POST ERROR:');
-        console.error(err);
-      })
+
       this.handleReset();
     },
     handleReset() {
-      this.employeesEdit = {
+      this.employeeData = {
         personId: '',
         firstName: '',
         lastName: '',
