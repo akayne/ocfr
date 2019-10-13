@@ -6,7 +6,7 @@ var employeesEditApp = new Vue({
 
   methods: {
     handleEdit() {
-      fetch('api/waiting/post.php', {
+      fetch('api/employee/post.php', {
         method:'POST',
         body: JSON.stringify(this.employeeData),
         headers: {
