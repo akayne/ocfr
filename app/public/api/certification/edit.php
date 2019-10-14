@@ -7,9 +7,9 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'INSERT INTO certifications
-    (name, agency, defaultExpiration)
-  VALUES (?,?,?)'
+  'UPDATE certifications (name, agency, defaultExpiration)
+   SET (?,?,?)
+   WHERE certId = ?'
 );
 $stmt->execute([
   $_POST['name'],
