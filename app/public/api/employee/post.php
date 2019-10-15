@@ -8,8 +8,9 @@ $db = DbConnection::getConnection();
 // Step 2: Prepare & run the query
 $stmt = $db->prepare(
   'INSERT INTO employees
-    (name, agency, defaultExpiration)
-  VALUES (?,?,?)'
+    (firstName,lastName,radioNumber,stationNumber,isActive,
+    address,email,phone,dob,startDate,gender,position)
+  VALUES (?,?,?,?,?,?,?,?,?,?,?,?)'
 );
 
 $stmt->execute([
