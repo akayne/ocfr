@@ -7,8 +7,7 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'UPDATE certifications
-   SET name=?, agency=?, defaultExpiration=?
+  'DELETE FROM certifications
    WHERE certId = ?'
 );
 $stmt->execute([
