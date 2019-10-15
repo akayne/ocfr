@@ -4,8 +4,17 @@
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$stmt = $db->prepare('SELECT * FROM employees');
-$stmt->execute();
+if (isset($_GET['personId'])) {
+  $stmt = $db->prepare(
+    'SELECT * FROM employees
+    WHERE personId = ?'
+  );
+  $stmt->execute([$_GET['personId']]);
+  } else {
+  $stmt = $db->prepare('SELECT * FROM employees');
+  $stmt->execute();
+}
+
 $employees = $stmt->fetchAll();
 
 // Step 3: Convert to JSON

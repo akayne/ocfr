@@ -9,19 +9,19 @@ $db = DbConnection::getConnection();
 // Step 2: Prepare & run the query
 $stmt = $db->prepare(
   'UPDATE employees
-  SET firstName=?
-  WHERE personId'
+  SET firstName=?, lastName=?, radioNumber=?, stationNumber=?
+  WHERE personId=? '
 
 );
-
-$personId = Uuid::uuid4()->toString();
-
+//problem is the line below
+//$personId = Uuid::uuid4()->toString();
+//$personId = Uuid::uuid4();
 $stmt->execute([
-  $personId, // i.e. 25769c6c-d34d-4bfe-ba98-e0ee856f3e7a
   $_POST['firstName'],
   $_POST['lastName'],
   $_POST['radioNumber'],
   $_POST['stationNumber'],
+  $personId  // i.e. 25769c6c-d34d-4bfe-ba98-e0ee856f3e7a
 ]);
 
 // Step 4: Output
