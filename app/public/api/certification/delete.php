@@ -10,13 +10,13 @@ $stmt = $db->prepare(
   'DELETE FROM certifications
    WHERE certId = 1'
 );
-$stmt->execute([
-  $_POST['name'],
-  $_POST['agency'],
-  $_POST['defaultExpiration'],
-  $_POST['certId']
-]);
 
+$stmt->execute([
+  $_DELETE['name'],
+  $_DELETE['agency'],
+  $_DELETE['defaultExpiration'],
+  $_DELETE['certId']
+]);
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');

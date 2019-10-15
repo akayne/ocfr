@@ -2,7 +2,7 @@ var employeesApp = new Vue({
   el: '#employeesApp',
   data: {
     employees:[],
-    employeesEdit: {}
+    recordemployees: {}
   },
 
   methods: {
@@ -10,38 +10,43 @@ var employeesApp = new Vue({
       fetch('api/employee/')
       .then(response => response.json())
       .then(json => { employeesApp.employees = json })
-    },
-    handleEdit(event){
-      fetch('api/employee/post.php', {
-        method:'POST',
-        body: JSON.stringify(this.employeesEdit),
-        headers: {
-          "Content-Type": "application/json; charset=utf-8"
+      },
+      handleCreate(event){
+        fetch('api/employee/post.php', {
+          method:'POST',
+          body: JSON.stringify(this.recordemployees),
+          headers: {
+            "Content-Type": "application/json; charset=utf-8"
+          }
+        })
+        .then( response => response.json() )
+        .then( json => { employeesApp.employees.push( json[0] ) })
+        .catch( err => {
+          console.error('RECORD POST ERROR:');
+          console.error(err);
+        })
+        this.handleReset();
+      },
+      handleReset() {
+        this.recordemployees = {
+          firstName: '',
+          lastName: '',
+          radioNumber: '',
+          stationNumber: '',
+          isActive: '',
+          address: '',
+          email: '',
+          phone: '',
+          dob: '',
+          startDate: '',
+          gender: '',
+          position: ''
         }
-      })
-      .then( response => response.json() )
-      .then( json => { employeesApp.employees=json })
-      .catch( err => {
-        console.error('RECORD POST ERROR:');
-        console.error(err);
-      })
-      this.handleReset();
-    },
-    handleReset() {
-      this.employeesEdit = {
-        personId: '',
-        firstName: '',
-        lastName: '',
-        radioNumber: '',
-        stationNumber: ''
-      }
-
-
-  }, // end methods
-  handleRowClick(employeeData) {
-    employeesEditApp.employeeData = employeeData;
-  }
-},
+      },
+    handleRowClick(employeeData) {
+      employeesEditApp.employeeData = employeeData;
+    }
+}, // end methods
     created() {
       this.handleReset();
       this.fetchemployees();
