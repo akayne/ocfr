@@ -66,6 +66,7 @@
       </div>
     </div>
   </form>
+  <div id="deletecert">
   <form @submit.prevent="handleDelete">
     <table class="table table-sm table-hover" id="certificationApp">
       <thead>
@@ -74,7 +75,7 @@
           <th>Name</th>
           <th>Agency</th>
           <th>Default Expiration</th>
-          <th>Delete?</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -90,6 +91,7 @@
       </tbody>
     </table>
   </form>
+</div>
 
 <!--  <div class="filter">
     <select v-model="filter.sab">
