@@ -8,7 +8,9 @@ $db = DbConnection::getConnection();
 
 // Step 2: Prepare & run the query
 $stmt = $db->prepare(
-  'UPDATE employees'
+  'UPDATE employees
+  (personId, firstName, lastName, radioNumber, stationNumber)
+  SET (firstName=?,lastName=?,radioNumber=?,stationNumber=?)'
 );
 
 $guid = Uuid::uuid4()->toString();

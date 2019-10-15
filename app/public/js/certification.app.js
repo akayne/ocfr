@@ -3,6 +3,10 @@ var certificationApp = new Vue({
   data: {
     certifications: [],
     recordCertif: {}
+/*    filter: {
+      sab: ''
+    }
+*/
   },
 
   methods: {
