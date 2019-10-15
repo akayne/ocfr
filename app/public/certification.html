@@ -63,8 +63,6 @@
     <div class="form-group row">
       <div class="col-sm-10" Align="center">
         <button type="submit" class="btn btn-primary">ADD</button>
-        <button type="submit" class="btn btn-primary">EDIT</button>
-        <button type="submit" class="btn btn-primary">DELETE</button>
       </div>
     </div>
   </form>
@@ -89,7 +87,41 @@
   </table>
 </div>
 
+<div id="certifEditApp">
+  <form @submit.prevent="handleEdit">
+
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="editName" placeholder="Certification Name" v-model="certifData.name">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="editAgency" placeholder="Agency" v-model="certifData.agency">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="editDefaultExpiration" placeholder="Years" v-model="certifData.defaultExpiration">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-10" Align="center">
+        <button type="submit" class="btn btn-primary">EDIT</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="js/certification.app.js"></script>
+<script src="js/certifEditApp.app.js"></script>
 </body>
+<div class="footer">
+  <p>Oconee County Fire Rescue | Phone : 859-123-4567 | 290 South Union Street Apartment #106, Bloomington, Indiana 47401</p>
+</div>
 </html>
