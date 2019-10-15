@@ -66,7 +66,7 @@
       </div>
     </div>
   </form>
-  <div id="deletecert">
+  <div id="certificationApp">
   <form @submit.prevent="handleDelete">
     <table class="table table-sm table-hover" id="certificationApp">
       <thead>
@@ -84,6 +84,7 @@
           <td>{{ c.name }}</td>
           <td>{{ c.agency }}</td>
           <td>{{ c.defaultExpiration }}</td>
+
           <td><button type="submit" class="btn btn-primary">Delete?</button></td>
 
 
