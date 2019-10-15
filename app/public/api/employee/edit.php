@@ -1,5 +1,4 @@
 <?php
-use Ramsey\Uuid\Uuid;
 
 // Step 0: Validate data
 
@@ -9,21 +8,18 @@ $db = DbConnection::getConnection();
 // Step 2: Prepare & run the query
 $stmt = $db->prepare(
   'UPDATE employees
-  (personId, firstName, lastName, radioNumber, stationNumber)
-  SET (firstName=?,lastName=?,radioNumber=?,stationNumber=?)'
+  SET firstName=?, lastName=?, radioNumber=?, stationNumber=?
+  WHERE personId=? '
 );
-
-$guid = Uuid::uuid4()->toString();
-
+//problem is the line below
+//$personId = Uuid::uuid4()->toString();
+//$personId = Uuid::uuid4();
 $stmt->execute([
-  $personId, // i.e. 25769c6c-d34d-4bfe-ba98-e0ee856f3e7a
   $_POST['firstName'],
   $_POST['lastName'],
   $_POST['radioNumber'],
   $_POST['stationNumber'],
-
-
-
+  $_POST['personId']  // i.e. 25769c6c-d34d-4bfe-ba98-e0ee856f3e7a
 ]);
 
 // Step 4: Output
