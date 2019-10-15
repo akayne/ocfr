@@ -43,13 +43,8 @@ var certificationApp = new Vue({
         }
       })
       .then( response => response.json() )
-      .then( json => { certificationApp.certifications.push( json[0] ) })
-      .catch( err => {
-        console.error('RECORD POST ERROR:');
-        console.error(err);
-      });
+      .then( json => { certificationApp.certifications= json  })
 
-      this.handleReset();
     },
     handleReset() {
       this.recordCertif = {
