@@ -12,6 +12,7 @@
   <meta charset="utf-8">
 </head>
 <body>
+
   <nav class="navbar navbar-expand-lg navbar-white">
   <a class="navbar-brand" href="index.html">Homepage</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,128 +38,122 @@
 <p></p>
 
 <div id="employeesApp">
-  <form>
-  <!--<form @submit.prevent="handleSubmit">
+  <form @submit.prevent="handleCreate">
 
-    <div class="form-group row">
-      <label for="inputPersonId" class="col-sm-2 col-form-label">Personnel ID</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputPersonId" placeholder="ID" v-model="recordemployee.personId">
-      </div>
-    </div>
--->
     <div class="form-group row">
       <label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" v-model="employeesEdit.firstName">
+        <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" v-model="recordemployees.firstName">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="inputLastName" class="col-sm-2 col-form-label">Last Name</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" v-model="employeesEdit.lastName">
+        <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" v-model="recordemployees.lastName">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="inputRadioNum" class="col-sm-2 col-form-label">Radio Number</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputRadioNum" placeholder="Radio #" v-model="employeesEdit.radioNumber">
+        <input type="text" class="form-control" id="inputRadioNum" placeholder="Radio #" v-model="recordemployees.radioNumber">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="inputStationNum" class="col-sm-2 col-form-label">Station Number</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputStationNum" placeholder="Station #" v-model="employeesEdit.stationNumber">
+        <input type="text" class="form-control" id="inputStationNum" placeholder="Station #" v-model="recordemployees.stationNumber">
       </div>
     </div>
     <div class="form-group row">
       <label for="inputActive" class="col-sm-2 col-form-label">Is Active</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputActive" placeholder="TRUE" v-model="employeesEdit.isActive">
+        <input type="text" class="form-control" id="inputActive" placeholder="TRUE" v-model="recordemployees.isActive">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputAddress" placeholder="Address" v-model="employeesEdit.Address">
+        <input type="text" class="form-control" id="inputAddress" placeholder="Address" v-model="recordemployees.address">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputEmail" placeholder="@" v-model="employeesEdit.email">
+        <input type="text" class="form-control" id="inputEmail" placeholder="@" v-model="recordemployees.email">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="inputPhone" class="col-sm-2 col-form-label">Phone Number</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputPhone" placeholder="**********" v-model="employeesEdit.phone">
+        <input type="text" class="form-control" id="inputPhone" placeholder="**********" v-model="recordemployees.phone">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="inputDob" class="col-sm-2 col-form-label">DOB</label>
       <div class="col-sm-10">
-        <input type="date" class="form-control" id="inputDob" placeholder="2001-12-13" v-model="employeesEdit.dob">
+        <input type="date" class="form-control" id="inputDob" placeholder="2001-12-13" v-model="recordemployees.dob">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="inputStart" class="col-sm-2 col-form-label">Start Date</label>
       <div class="col-sm-10">
-        <input type="date" class="form-control" id="inputStart" placeholder="????-??-??" v-model="employeesEdit.startDate">
+        <input type="date" class="form-control" id="inputStart" placeholder="????-??-??" v-model="recordemployees.startDate">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="inputGender" class="col-sm-2 col-form-label">Gender</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputGender" placeholder="Male" v-model="employeesEdit.gender">
+        <input type="text" class="form-control" id="inputGender" placeholder="Male" v-model="recordemployees.gender">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="inputPosition" class="col-sm-2 col-form-label">Position Title</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputPosition" placeholder="Position" v-model="employeesEdit.position">
+        <input type="text" class="form-control" id="inputPosition" placeholder="Position" v-model="recordemployees.position">
       </div>
     </div>
 
-  <div class="form-group row">
-    <div class="col-sm-10" Align="center">
-      <button type="submit" class="btn btn-primary">ADD</button>
+    <div class="form-group row">
+      <div class="col-sm-10" Align="center">
+        <button type="submit" class="btn btn-primary">ADD</button>
+      </div>
     </div>
-  </div>
-</form>
-<br>
-      <table class="table table-sm table-hover" id="employeesApp">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Radio Number</th>
-            <th>Station Number</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="e in employees" @click="handleRowClick(e)">
-            <td>{{ e.personId }}</td>
-            <td>{{ e.firstName }}</td>
-            <td>{{ e.lastName }}</td>
-            <td>{{ e.radioNumber }}</td>
-            <td>{{ e.stationNumber }}</td>
+  </form>
 
-          </tr>
-        </tbody>
-      </table>
-    </div>
+<br>
+
+  <table class="table table-sm table-hover" id="employeesApp">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Radio Number</th>
+        <th>Station Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="e in employees" @click="handleRowClick(e)">
+        <td>{{ e.personId }}</td>
+        <td>{{ e.firstName }}</td>
+        <td>{{ e.lastName }}</td>
+        <td>{{ e.radioNumber }}</td>
+        <td>{{ e.stationNumber }}</td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 
 
