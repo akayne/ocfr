@@ -25,7 +25,7 @@ var certificationApp = new Vue({
         }
       })
       .then( response => response.json() )
-      .then( json => { certificationApp.certifications.push( json[0] ) })
+      .then( json => { certificationApp.certifications = json })
       .catch( err => {
         console.error('RECORD POST ERROR:');
         console.error(err);
@@ -34,18 +34,21 @@ var certificationApp = new Vue({
       this.handleReset();
     },
 
-    handleDelete(event) {
+    handleDelete(cert) {
       fetch('api/certification/delete.php', {
         method:'POST',
-        body: JSON.stringify(this.recordCertif),
+        body: JSON.stringify(cert),
         headers: {
           "Content-Type": "application/json; charset=utf-8"
         }
       })
       .then( response => response.json() )
-      .then( json => { certificationApp.certifications= json  })
+      .then( json => { certificationApp.certifications= json  });
+
+      this.handleReset();
 
     },
+
     handleReset() {
       this.recordCertif = {
         name: '',
@@ -56,6 +59,7 @@ var certificationApp = new Vue({
 
     handleRowClick(certifData) {
       certifEditApp.certifData = certifData;
+      console.log(certifData);
     }
   },//end of methods
 

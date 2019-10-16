@@ -7,12 +7,14 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'DELETE FROM certifications
-   WHERE certId = ?'
+  'INSERT INTO certDetails
+    (name, agency, defaultExpiration)
+  VALUES (?,?,?)'
 );
-
 $stmt->execute([
-  $_POST['certId']
+  $_POST['name'],
+  $_POST['agency'],
+  $_POST['defaultExpiration']
 ]);
 
 // Step 4: Output

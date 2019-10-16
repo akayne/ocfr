@@ -66,35 +66,8 @@
       </div>
     </div>
   </form>
-  <div id="certificationApp">
-  <form @submit.prevent="handleDelete">
-    <table class="table table-sm table-dark" id="certificationApp">
-      <thead>
-        <tr>
-          <th>certId</th>
-          <th>Name</th>
-          <th>Agency</th>
-          <th>Default Expiration</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="c in certifications" @click="handleRowClick(c)">
-          <td>{{ c.certId }}</td>
-          <td>{{ c.name }}</td>
-          <td>{{ c.agency }}</td>
-          <td>{{ c.defaultExpiration }}</td>
-
-          <td><button type="submit" class="btn btn-primary">Delete?</button></td>
-
-
-        </tr>
-      </tbody>
-    </table>
-  </form>
-</div>
-
-<!--  <div class="filter">
+<!--
+ <div class="filter">
     <select v-model="filter.sab">
       <option value="">(all)</option>
       <option>M</option>
@@ -102,6 +75,33 @@
     </select>
   </div>
 -->
+  <table class="table table-sm table-dark" >
+    <thead>
+      <tr>
+        <th>certId</th>
+        <th>Name</th>
+        <th>Agency</th>
+        <th>Default Expiration</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="c in certifications" @click="handleRowClick(c)">
+        <td>{{ c.certId }}</td>
+        <td>{{ c.name }}</td>
+        <td>{{ c.agency }}</td>
+        <td>{{ c.defaultExpiration }}</td>
+
+        <td>
+          <form @submit.prevent="handleDelete(c)">
+            <button type="submit" class="btn btn-primary">Delete</button>
+          </form>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+
 </div>
 <br>
 
@@ -141,7 +141,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="js/certification.app.js"></script>
 <script src="js/certifEditApp.app.js"></script>
-<script src="js/delete.app.js"></script>
+
 </body>
 <div class="footer">
   <p>Oconee County Fire Rescue | Phone : 859-123-4567 | 290 South Union Street Apartment #106, Bloomington, Indiana 47401</p>

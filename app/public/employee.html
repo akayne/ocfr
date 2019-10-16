@@ -130,9 +130,7 @@
     </div>
   </form>
 
-<br>
-
-  <table class="table table-sm table-hover" id="employeesApp">
+  <table class="table table-sm table-hover">
     <thead>
       <tr>
         <th>ID</th>
@@ -149,6 +147,12 @@
         <td>{{ e.lastName }}</td>
         <td>{{ e.radioNumber }}</td>
         <td>{{ e.stationNumber }}</td>
+
+        <td>
+          <form @submit.prevent="handleDelete(e)">
+            <button type="submit" class="btn btn-primary">Delete</button>
+          </form>
+        </td>
 
       </tr>
     </tbody>

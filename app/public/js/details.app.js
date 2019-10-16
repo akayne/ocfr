@@ -1,4 +1,3 @@
-
 var detailsApp = new Vue({
   el: '#detailsApp',
   data: {
