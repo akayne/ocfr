@@ -1,7 +1,7 @@
-var certDelete = new Vue({
+var certificationDel = new Vue({
   el: '#certificationDel',
   data: {
-    employees:[]
+    deletecert:[]
   },
 
   methods: {
@@ -14,7 +14,7 @@ var certDelete = new Vue({
         }
       })
       .then( response => response.json() )
-      .then( json => { certificationApp.certifications= json  })
+      .then( json => { certificationDel.deletecert= json  })
 
     },
 

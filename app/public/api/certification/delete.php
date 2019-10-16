@@ -8,14 +8,12 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 $stmt = $db->prepare(
   'DELETE FROM certifications
-   WHERE certId = 1'
+   WHERE certId = ?'
 );
 
 $stmt->execute([
-  $_DELETE['name'],
-  $_DELETE['agency'],
-  $_DELETE['defaultExpiration'],
-  $_DELETE['certId']
+
+  $_POST['certId']
 ]);
 
 // Step 4: Output
