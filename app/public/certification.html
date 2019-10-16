@@ -66,8 +66,9 @@
       </div>
     </div>
   </form>
-  <div id="certificationDel">
-  <form @submit.prevent="handleDelete">
+
+  <div id="certificationApp">
+
     <table class="table table-sm table-dark" id="certificationApp">
       <thead>
         <tr>
@@ -85,13 +86,16 @@
           <td>{{ c.agency }}</td>
           <td>{{ c.defaultExpiration }}</td>
 
-          <td><button type="submit" class="btn btn-primary" @click="handleRowClick(c)">Delete?</button></td>
+          <td>
+            <form @submit.prevent="handleDelete(c)">
+              <button type="submit" class="btn btn-primary">Delete</button>
+            </form>
+          </td>
 
 
         </tr>
       </tbody>
     </table>
-  </form>
 </div>
 
 <!--  <div class="filter">
@@ -141,7 +145,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="js/certification.app.js"></script>
 <script src="js/certifEditApp.app.js"></script>
-<script src="js/delete.app.js"></script>
+
 </body>
 <div class="footer">
   <p>Oconee County Fire Rescue | Phone : 859-123-4567 | 290 South Union Street Apartment #106, Bloomington, Indiana 47401</p>

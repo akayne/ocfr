@@ -20,7 +20,7 @@ var employeesApp = new Vue({
           }
         })
         .then( response => response.json() )
-        .then( json => { employeesApp.employees.push( json[0] ) })
+        .then( json => { employeesApp.employees = json })
         .catch( err => {
           console.error('RECORD POST ERROR:');
           console.error(err);
