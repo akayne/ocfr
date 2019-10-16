@@ -47,8 +47,8 @@
 <table class="table table-sm table-dark" id="detailsApp">
   <thead>
     <tr>
-              <th>Member Name</th>
-              <th>Certification Name</th>
+              <th>Employee ID</th>
+              <th>Certification ID</th>
               <th>Date Achieved</th>
               <th>Expiration Date</th>
     </tr>
@@ -72,24 +72,28 @@
 
     <div class="form-group row">
       <div class="col-sm-10">
+        <p>Employee ID</p>
         <input type="text" class="form-control" id="editName" placeholder="Member Name" v-model="details.personId">
       </div>
     </div>
 
     <div class="form-group row">
       <div class="col-sm-10">
+        <p>Certification ID</p>
         <input type="text" class="form-control" id="editAgency" placeholder="Certification Name" v-model="details.certId">
       </div>
     </div>
 
     <div class="form-group row">
       <div class="col-sm-10">
+        <p>Date Archived</p>
         <input type="date" class="form-control" id="editDefaultExpiration" placeholder="Date Achieved" v-model="details.dateReceived">
       </div>
     </div>
 
     <div class="form-group row">
       <div class="col-sm-10">
+        <p>Expiration Date</p>
         <input type="date" class="form-control" id="editDefaultExpiration" placeholder="Expiration Date" v-model="details.dateExpired">
       </div>
     </div>
