@@ -66,39 +66,8 @@
       </div>
     </div>
   </form>
-
-  <div id="certificationApp">
-
-    <table class="table table-sm table-dark" id="certificationApp">
-      <thead>
-        <tr>
-          <th>certId</th>
-          <th>Name</th>
-          <th>Agency</th>
-          <th>Default Expiration</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="c in certifications" @click="handleRowClick(c)">
-          <td>{{ c.certId }}</td>
-          <td>{{ c.name }}</td>
-          <td>{{ c.agency }}</td>
-          <td>{{ c.defaultExpiration }}</td>
-
-          <td>
-            <form @submit.prevent="handleDelete(c)">
-              <button type="submit" class="btn btn-primary">Delete</button>
-            </form>
-          </td>
-
-
-        </tr>
-      </tbody>
-    </table>
-</div>
-
-<!--  <div class="filter">
+<!--
+ <div class="filter">
     <select v-model="filter.sab">
       <option value="">(all)</option>
       <option>M</option>
@@ -106,6 +75,33 @@
     </select>
   </div>
 -->
+  <table class="table table-sm table-dark" >
+    <thead>
+      <tr>
+        <th>certId</th>
+        <th>Name</th>
+        <th>Agency</th>
+        <th>Default Expiration</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="c in certifications" @click="handleRowClick(c)">
+        <td>{{ c.certId }}</td>
+        <td>{{ c.name }}</td>
+        <td>{{ c.agency }}</td>
+        <td>{{ c.defaultExpiration }}</td>
+
+        <td>
+          <form @submit.prevent="handleDelete(c)">
+            <button type="submit" class="btn btn-primary">Delete</button>
+          </form>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+
 </div>
 <br>
 
