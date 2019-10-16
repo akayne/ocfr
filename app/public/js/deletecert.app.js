@@ -1,50 +1,28 @@
-var employeesApp = new Vue({
-  el: '#employeesApp',
+var certDelete = new Vue({
+  el: '#certificationDel',
   data: {
-    employees:[],
-    employeesEdit: {}
+    employees:[]
   },
 
   methods: {
-    fetchemployees(){
-      fetch('api/employee/')
-      .then(response => response.json())
-      .then(json => { employeesApp.employees = json })
-    },
-    handleEdit(event){
-      fetch('api/employee/post.php', {
+    handleDelete(event) {
+      fetch('api/certification/delete.php', {
         method:'POST',
-        body: JSON.stringify(this.employeesEdit),
+        body: JSON.stringify(this.recordCertif),
         headers: {
           "Content-Type": "application/json; charset=utf-8"
         }
       })
       .then( response => response.json() )
-      .then( json => { employeesApp.employees=json })
-      .catch( err => {
-        console.error('RECORD POST ERROR:');
-        console.error(err);
-      })
-      this.handleReset();
+      .then( json => { certificationApp.certifications= json  })
+
     },
-    handleReset() {
-      this.employeesEdit = {
-        personId: '',
-        firstName: '',
-        lastName: '',
-        radioNumber: '',
-        stationNumber: ''
-      }
 
 
   }, // end methods
-  handleRowClick(employeeData) {
-    employeesEditApp.employeeData = employeeData;
-  }
-},
-    created() {
-      this.handleReset();
-      this.fetchemployees();
-
-    }
+//  handleRowClick(certDel) {
+  //  employeesEditApp.employeeData = employeeData;
+  //}
+//},
+  //  created() {  }
 });
