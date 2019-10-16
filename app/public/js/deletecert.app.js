@@ -6,15 +6,10 @@ var certificationDel = new Vue({
 
   methods: {
     handleDelete(event) {
-      fetch('api/certification/delete.php', {
-        method:'POST',
-        body: JSON.stringify(this.recordCertif),
-        headers: {
-          "Content-Type": "application/json; charset=utf-8"
-        }
-      })
-      .then( response => response.json() )
-      .then( json => { certificationDel.deletecert= json  })
+      fetch('api/certification/delete.php')
+
+      //.then( response => response.json() )
+      //.then( json => { certificationDel.deletecert= json  })
 
     },
 
