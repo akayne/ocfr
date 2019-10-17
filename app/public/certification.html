@@ -32,6 +32,7 @@
     </ul>
   </div>
 </nav>
+
 <p></p>
 <img src="img/certification.PNG" alt="Brand" style="width:77%" align="center">
 <p></p>
@@ -75,6 +76,23 @@
     </select>
   </div>
 -->
+
+    <div class="filter">
+      <select v-model="filter.defExp">
+        <option value="">(all)</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>0</option>
+      </select>
+    </div>
   <table class="table table-sm table-dark" >
     <thead>
       <tr>
@@ -86,7 +104,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="c in certifications" @click="handleRowClick(c)">
+      <tr v-for="c in certifications" @click="handleRowClick(c)" v-if="filter.defExp=='' || filter.defExp == c.defaultExpiration">
         <td>{{ c.certId }}</td>
         <td>{{ c.name }}</td>
         <td>{{ c.agency }}</td>

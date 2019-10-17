@@ -130,6 +130,20 @@
     </div>
   </form>
 
+
+  <div class="filter">
+    <select v-model="filter.stNumber">
+      <option value="">(all)</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+    </select>
+  </div>
   <table class="table table-sm table-hover">
     <thead>
       <tr>
@@ -141,7 +155,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="e in employees" @click="handleRowClick(e)">
+      <tr v-for="e in employees" @click="handleRowClick(e)" v-if="filter.stNumber=='' || filter.stNumber == e.stationNumber">
         <td>{{ e.personId }}</td>
         <td>{{ e.firstName }}</td>
         <td>{{ e.lastName }}</td>

@@ -8,18 +8,16 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 $stmt = $db->prepare(
   'UPDATE certDetails
-   SET dateReceived = ?, dateExpired = ?
-   WHERE personId = ?, certId = ?'
+   SET certId=?, dateReceived=?, dateExpired=?
+   WHERE personId = ?'
 );
 $stmt->execute([
-
+  $_POST['certId'],
   $_POST['dateReceived'],
   $_POST['dateExpired'],
-  $_POST['personId'],
-  $_POST['certId']
-
+  $_POST['personId']
 ]);
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../certification/');
+header('Location: ../details/');
