@@ -9,7 +9,7 @@ $db = DbConnection::getConnection();
 $stmt = $db->prepare(
   'INSERT INTO certDetails
     (personId, certId, dateReceived, dateExpired)
-  VALUES (?,?,?,?)'
+   VALUES (?,?,?,?)'
 );
 $stmt->execute([
   $_POST['personId'],

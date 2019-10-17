@@ -8,14 +8,13 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 $stmt = $db->prepare(
   'DELETE FROM certDetails
-   WHERE personId = ?, certId = ?'
+   WHERE personId = ?'
 );
 
 $stmt->execute([
-  $_POST['personId'],
-  $_POST['certId']
+  $_POST['personId']
 ]);
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../certification/');
+header('Location: ../details/');
