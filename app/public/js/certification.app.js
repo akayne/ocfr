@@ -2,11 +2,11 @@ var certificationApp = new Vue({
   el: '#certificationApp',
   data: {
     certifications: [],
-    recordCertif: {}
-/*    filter: {
-      sab: ''
+    recordCertif: {},
+    filter: {
+      defExp: ''
     }
-*/
+
   },
 
   methods: {
