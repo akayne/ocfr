@@ -7,16 +7,17 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'INSERT INTO certDetails
-    (name, agency, defaultExpiration)
-  VALUES (?,?,?)'
+  'UPDATE certDetails
+   SET certId=?, dateReceived=?, dateExpired=?
+   WHERE personId = ?'
 );
 $stmt->execute([
-  $_POST['name'],
-  $_POST['agency'],
-  $_POST['defaultExpiration']
+  $_POST['certId'],
+  $_POST['dateReceived'],
+  $_POST['dateExpired'],
+  $_POST['personId']
 ]);
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../certification/');
+header('Location: ../details/');
