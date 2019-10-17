@@ -7,17 +7,15 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'INSERT INTO certDetails
-    (personId, certId, dateReceived, dateExpired)
-  VALUES (?,?,?,?)'
+  'DELETE FROM certDetails
+   WHERE personId = ?, certId = ?'
 );
+
 $stmt->execute([
   $_POST['personId'],
-  $_POST['certId'],
-  $_POST['dateReceived'],
-  $_POST['dateExpired']
+  $_POST['certId']
 ]);
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../details/');
+header('Location: ../certification/');

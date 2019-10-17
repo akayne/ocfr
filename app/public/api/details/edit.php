@@ -7,14 +7,17 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'INSERT INTO certDetails
-    (name, agency, defaultExpiration)
-  VALUES (?,?,?)'
+  'UPDATE certDetails
+   SET dateReceived = ?, dateExpired = ?
+   WHERE personId = ?, certId = ?'
 );
 $stmt->execute([
-  $_POST['name'],
-  $_POST['agency'],
-  $_POST['defaultExpiration']
+
+  $_POST['dateReceived'],
+  $_POST['dateExpired'],
+  $_POST['personId'],
+  $_POST['certId']
+
 ]);
 
 // Step 4: Output
