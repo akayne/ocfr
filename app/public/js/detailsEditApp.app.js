@@ -13,7 +13,7 @@ var detailsEditApp = new Vue({
           "Content-Type": "application/json; charset=utf-8"
         }
       });
-/*      .then( response => response.json() )
+/*      .then( re sponse => response.json() )
       .then( json => {waitingApp.patients = json})
       .catch( err => {
         console.error('TRIAGE POST ERROR:');

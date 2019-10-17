@@ -5,12 +5,13 @@ var detailsApp = new Vue({
     recordDetails: {}
   },
 
+
   methods: {
     fetchdetails(){
       fetch('api/details/')
       .then(response => response.json())
       .then(json => { detailsApp.details = json })
-  }
+  },
 
   handleCreate(event) {
     fetch('api/details/post.php', {

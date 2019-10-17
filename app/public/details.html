@@ -67,34 +67,34 @@
 
 <h3>Edit Certification Details:</h3>
 <br>
-<div id="detailsApp">
-  <form @submit.prevent="">
+<div id="detailsEditApp">
+  <form @submit.prevent="handleCreate">
 
     <div class="form-group row">
       <div class="col-sm-10">
         <p>Employee ID</p>
-        <input type="text" class="form-control" id="editName" placeholder="Employee ID" v-model="details.personId">
+        <input type="text" class="form-control" id="editName" placeholder="Employee ID" v-model="detailData.personId">
       </div>
     </div>
 
     <div class="form-group row">
       <div class="col-sm-10">
         <p>Certification ID</p>
-        <input type="text" class="form-control" id="editAgency" placeholder="Certification ID" v-model="details.certId">
+        <input type="text" class="form-control" id="editAgency" placeholder="Certification ID" v-model="detailData.certId">
       </div>
     </div>
 
     <div class="form-group row">
       <div class="col-sm-10">
         <p>Date Archived</p>
-        <input type="date" class="form-control" id="editDefaultExpiration" placeholder="Date Achieved" v-model="details.dateReceived">
+        <input type="date" class="form-control" id="editDefaultExpiration" placeholder="Date Achieved" v-model="detailData.dateReceived">
       </div>
     </div>
 
     <div class="form-group row">
       <div class="col-sm-10">
         <p>Expiration Date</p>
-        <input type="date" class="form-control" id="editDefaultExpiration" placeholder="Expiration Date" v-model="details.dateExpired">
+        <input type="date" class="form-control" id="editDefaultExpiration" placeholder="Expiration Date" v-model="detailData.dateExpired">
       </div>
     </div>
 
