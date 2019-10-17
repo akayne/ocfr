@@ -2,7 +2,10 @@ var detailsApp = new Vue({
   el: '#detailsApp',
   data: {
     details: [],
-    recordDetails: {}
+    recordDetails: {},
+    filter: {
+      isExp: ''
+    }
   },
 
 
@@ -39,6 +42,11 @@ var detailsApp = new Vue({
           dateExpired: ''
         }
       },
+
+      displayExpireIn(d) {
+        return moment.utc(d).local().fromNow();
+      },
+
 
     handleRowClick(detailData) {
       detailsEditApp.detailData = detailData;
