@@ -2,7 +2,10 @@ var employeesApp = new Vue({
   el: '#employeesApp',
   data: {
     employees:[],
-    recordemployees: {}
+    recordemployees: {},
+    filter: {
+      stNumber: ''
+        }
   },
 
   methods: {
