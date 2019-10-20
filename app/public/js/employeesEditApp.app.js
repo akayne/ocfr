@@ -22,7 +22,8 @@ var employeesEditApp = new Vue({
         firstName: '',
         lastName: '',
         radioNumber: '',
-        stationNumber: ''
+        stationNumber: '',
+        email: ''
       }
     }
 

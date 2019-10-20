@@ -53,7 +53,7 @@ var employeesApp = new Vue({
         lastName: '',
         radioNumber: '',
         stationNumber: '',
-        isActive: '',
+      
         address: '',
         email: '',
         phone: '',
