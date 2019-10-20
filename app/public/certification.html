@@ -32,6 +32,7 @@
     </ul>
   </div>
 </nav>
+
 <p></p>
 <img src="img/certification.PNG" alt="Brand" style="width:77%" align="center">
 <p></p>
@@ -66,42 +67,51 @@
       </div>
     </div>
   </form>
-  <div id="certificationDel">
-  <form @submit.prevent="handleDelete">
-    <table class="table table-sm table-dark" id="certificationApp">
-      <thead>
-        <tr>
-          <th>certId</th>
-          <th>Name</th>
-          <th>Agency</th>
-          <th>Default Expiration</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="c in certifications" @click="handleRowClick(c)">
-          <td>{{ c.certId }}</td>
-          <td>{{ c.name }}</td>
-          <td>{{ c.agency }}</td>
-          <td>{{ c.defaultExpiration }}</td>
 
-          <td><button type="submit" class="btn btn-primary" @click="handleRowClick(c)">Delete?</button></td>
-
-
-        </tr>
-      </tbody>
-    </table>
-  </form>
-</div>
-
-<!--  <div class="filter">
-    <select v-model="filter.sab">
+  <div class="filter">
+    <select v-model="filter.defExp">
       <option value="">(all)</option>
-      <option>M</option>
-      <option>F</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+      <option>9</option>
+      <option>10</option>
+      <option>0</option>
     </select>
   </div>
--->
+  
+  <table class="table table-sm table-dark" >
+    <thead>
+      <tr>
+        <th>certId</th>
+        <th>Name</th>
+        <th>Agency</th>
+        <th>Default Expiration</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="c in certifications" @click="handleRowClick(c)" v-if="filter.defExp=='' || filter.defExp == c.defaultExpiration">
+        <td>{{ c.certId }}</td>
+        <td>{{ c.name }}</td>
+        <td>{{ c.agency }}</td>
+        <td>{{ c.defaultExpiration }}</td>
+
+        <td>
+          <form @submit.prevent="handleDelete(c)">
+            <button type="submit" class="btn btn-primary">Delete</button>
+          </form>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+
 </div>
 <br>
 
@@ -141,7 +151,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="js/certification.app.js"></script>
 <script src="js/certifEditApp.app.js"></script>
-<script src="js/delete.app.js"></script>
+
 </body>
 <div class="footer">
   <p>Oconee County Fire Rescue Center | Phone : (812) 332-9763 | 300 East 4th Street, Bloomington, Indiana 47408</p>
