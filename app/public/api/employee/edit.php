@@ -8,8 +8,8 @@ $db = DbConnection::getConnection();
 // Step 2: Prepare & run the query
 $stmt = $db->prepare(
   'UPDATE employees
-  SET firstName=?, lastName=?, radioNumber=?, stationNumber=?
-  WHERE personId=? '
+   SET firstName=?, lastName=?, radioNumber=?, stationNumber=?
+   WHERE personId = ? '
 );
 //problem is the line below
 //$personId = Uuid::uuid4()->toString();
