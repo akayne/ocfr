@@ -40,17 +40,79 @@
 <img src="img/details.PNG" alt="Brand" style="width:77%">
 <p></p>
 
-<p></p>
-<table table border="5" width="100%" cellpadding="10" Align="center">
-<p></p>
+<div id="detailsApp">
+  <form @submit.prevent="handleCreate">
 
-<table class="table table-sm table-dark" id="detailsApp">
+    <div class="form-group row">
+      <label for="inputpersonId" class="col-sm-2 col-form-label">Employee ID</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="inputpersonId" placeholder="Employee ID" v-model="recordDetails.personId">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputcertId" class="col-sm-2 col-form-label">Certification ID</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="inputcerId" placeholder="Certification ID" v-model="recordDetails.certId">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputdataReceived" class="col-sm-2 col-form-label">Date Received</label>
+      <div class="col-sm-10">
+        <input type="date" class="form-control" id="inputdataReceived" placeholder="Date Received" v-model="recordDetails.dateReceived">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputdateExpired" class="col-sm-2 col-form-label">Date Expired</label>
+      <div class="col-sm-10">
+        <input type="date" class="form-control" id="inputdateExpired" placeholder="Date Expired" v-model="recordDetails.dateExpired">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-10" Align="center">
+        <button type="submit" class="btn btn-primary">ADD</button>
+      </div>
+    </div>
+  </form>
+
+  <table class="table table-sm table-dark">
+    <thead>
+      <tr>
+        <th>Employee ID</th>
+        <th>Certification ID</th>
+        <th>Date Achieved</th>
+        <th>Expiration Date</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="d in details" @click="handleRowClick(d)">
+        <td>{{ d.personId }}</td>
+        <td>{{ d.certId }}</td>
+        <td>{{ d.dateReceived }}</td>
+        <td>{{ d.dateExpired }}</td>
+
+
+
+
+<div class="filter">
+  <select v-model="filter.defExp">
+    <option value="">(all)</option>
+    <option>In</option>
+    <option>2</option>
+  </select>
+</div>
+<table class="table table-sm table-dark" id="detailsApp" v-if="filter.isExp=='' || filter.isExp == d.displayExpireIn(d.dateExpired)">
   <thead>
     <tr>
               <th>Employee ID</th>
               <th>Certification ID</th>
               <th>Date Achieved</th>
               <th>Expiration Date</th>
+              <th>Expired?</th>
     </tr>
   </thead>
   <tbody>
@@ -59,6 +121,7 @@
               <td>{{ d.certId }}</td>
               <td>{{ d.dateReceived }}</td>
               <td>{{ d.dateExpired }}</td>
+              <td>{{ displayExpireIn(d.dateExpired) }}</td>
         </tr>
 
   </tbody>
@@ -100,18 +163,19 @@
 
     <div class="form-group row">
       <div class="col-sm-10" Align="center">
-        <button type="submit" class="btn btn-primary" >Add</button>
+        <button type="submit" class="btn btn-primary">Edit</button>
       </div>
     </div>
   </form>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/lib/moment.min.js"></script>
 <script src="js/details.app.js"></script>
 <script src="js/detailsEditApp.app.js"></script>
 
 </body>
 <div class="footer">
-  <p>Oconee County Fire Rescue | Phone : 859-123-4567 | 290 South Union Street Apartment #106, Bloomington, Indiana 47401</p>
+<p>Oconee County Fire Rescue Center | Phone : (812) 332-9763 | 300 East 4th Street, Bloomington, Indiana 47408</p>
 </div>
 </html>

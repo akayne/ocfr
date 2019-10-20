@@ -12,7 +12,7 @@ var employeesEditApp = new Vue({
         headers: {
           "Content-Type": "application/json; charset=utf-8"
         }
-      })
+      });
 
       this.handleReset();
     },
@@ -26,8 +26,8 @@ var employeesEditApp = new Vue({
         email: ''
       }
     }
-
   }, // end methods
+
     created() {
       this.handleReset();
     }

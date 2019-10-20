@@ -43,7 +43,7 @@ var certificationApp = new Vue({
         }
       })
       .then( response => response.json() )
-      .then( json => { certificationApp.certifications= json  });
+      .then( json => { certificationApp.certifications = json  });
 
       this.handleReset();
 
