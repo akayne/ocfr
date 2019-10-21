@@ -78,26 +78,6 @@
     </div>
   </form>
 
-  <table class="table table-sm table-dark">
-    <thead>
-      <tr>
-        <th>Employee ID</th>
-        <th>Certification ID</th>
-        <th>Date Achieved</th>
-        <th>Expiration Date</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="d in details" @click="handleRowClick(d)">
-        <td>{{ d.personId }}</td>
-        <td>{{ d.certId }}</td>
-        <td>{{ d.dateReceived }}</td>
-        <td>{{ d.dateExpired }}</td>
-
-
-
-
 <div class="filter">
   <select v-model="filter.defExp">
     <option value="">(all)</option>
