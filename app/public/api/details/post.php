@@ -8,12 +8,13 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 $stmt = $db->prepare(
   'INSERT INTO certDetails
-    (personId, certId, dateReceived, dateExpired)
-   VALUES (?,?,?,?)'
+    (firstName, lastName,name, dateReceived, dateExpired)
+   VALUES (?,?,?,?,?)'
 );
 $stmt->execute([
-  $_POST['personId'],
-  $_POST['certId'],
+  $_POST['firstName'],
+  $_POST['lastName'],
+  $_POST['name'],
   $_POST['dateReceived'],
   $_POST['dateExpired']
 ]);
