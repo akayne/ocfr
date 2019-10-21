@@ -78,30 +78,10 @@
     </div>
   </form>
 
-  <table class="table table-sm table-dark">
-    <thead>
-      <tr>
-        <th>Employee Name</th>
-        <th>Certification Name</th>
-        <th>Date Achieved</th>
-        <th>Expiration Date</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="d in details" @click="handleRowClick(d)">
-        <td>{{ d.firstName }} {{d.lastname}}</td>
-        <td>{{ d.name }}</td>
-        <td>{{ d.dateReceived }}</td>
-        <td>{{ d.dateExpired }}</td>
-
-
-
-
 <div class="filter">
   <select v-model="filter.defExp">
     <option value="">(all)</option>
-    <option>In</option>
+    <option>in 9 months</option>
     <option>2</option>
   </select>
 </div>
@@ -113,6 +93,7 @@
               <th>Date Achieved</th>
               <th>Expiration Date</th>
               <th>Expired?</th>
+              <th>Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -122,8 +103,12 @@
               <td>{{ d.dateReceived }}</td>
               <td>{{ d.dateExpired }}</td>
               <td>{{ displayExpireIn(d.dateExpired) }}</td>
+              <td>
+                <form @submit.prevent="handleDelete(d)">
+                  <button type="submit" class="btn btn-primary">Delete</button>
+                </form>
+              </td>
         </tr>
-
   </tbody>
   </table>
 </div>
@@ -131,7 +116,8 @@
 <h3>Add Certification Details:</h3>
 <br>
 <div id="detailsEditApp">
-  <form @submit.prevent="handleCreate">
+  <form @submit.prevent="handleEdit">
+
     <div class="form-group row">
       <div class="col-sm-10">
         <p>Employee Name</p>
