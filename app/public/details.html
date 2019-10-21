@@ -93,6 +93,7 @@
               <th>Date Achieved</th>
               <th>Expiration Date</th>
               <th>Expired?</th>
+              <th>Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -102,8 +103,12 @@
               <td>{{ d.dateReceived }}</td>
               <td>{{ d.dateExpired }}</td>
               <td>{{ displayExpireIn(d.dateExpired) }}</td>
+              <td>
+                <form @submit.prevent="handleDelete(d)">
+                  <button type="submit" class="btn btn-primary">Delete</button>
+                </form>
+              </td>
         </tr>
-
   </tbody>
   </table>
 </div>
@@ -111,7 +116,7 @@
 <h3>Add Certification Details:</h3>
 <br>
 <div id="detailsEditApp">
-  <form @submit.prevent="handleCreate">
+  <form @submit.prevent="handleEdit">
 
     <div class="form-group row">
       <div class="col-sm-10">
