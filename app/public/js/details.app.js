@@ -62,6 +62,10 @@ var detailsApp = new Vue({
         return moment.utc(d).local().fromNow();
       },
 
+      datewhen(d) {
+        return moment(d).isAfter();
+      }
+
 
     handleRowClick(detailData) {
       detailsEditApp.detailData = detailData;
