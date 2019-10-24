@@ -8,11 +8,11 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 $stmt = $db->prepare(
   'DELETE FROM certDetails
-   WHERE firstName = ?'
+   WHERE idnum = ?'
 );
 
 $stmt->execute([
-  $_POST['firstName']
+  $_POST['idnum']
 ]);
 
 // Step 4: Output

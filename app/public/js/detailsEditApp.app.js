@@ -26,8 +26,9 @@
 
     handleReset() {
       this.detailData = {
-        personId: '',
-        certId: '',
+        firstName:'',
+        lastName:'',
+        name:'',
         dateReceived: '',
         dateExpired: ''
       }
