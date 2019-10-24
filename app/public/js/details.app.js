@@ -51,21 +51,21 @@ var detailsApp = new Vue({
 
     handleReset() {
       this.recordDetails = {
-        personId: '',
-        certId: '',
+        firstName:'',
+        lastName:'',
+        name:'',
         dateReceived: '',
         dateExpired: ''
       }
     },
 
-      displayExpireIn(d) {
-        return moment.utc(d).local().fromNow();
-      },
+    displayExpireIn(d) {
+      return moment.utc(d).local().fromNow();
+    },
 
-      datewhen(d) {
-        return moment(d).isAfter();
-      }
-
+    datewhen(d) {
+      return moment(d).isAfter();
+    },
 
     handleRowClick(detailData) {
       detailsEditApp.detailData = detailData;

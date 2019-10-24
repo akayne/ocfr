@@ -8,7 +8,7 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 $stmt = $db->prepare(
   'INSERT INTO certDetails
-    (firstName, lastName,name, dateReceived, dateExpired)
+    (firstName, lastName, name, dateReceived, dateExpired)
    VALUES (?,?,?,?,?)'
 );
 $stmt->execute([

@@ -1,4 +1,4 @@
-var detailsEditApp = new Vue({
+ var detailsEditApp = new Vue({
   el: '#detailsEditApp',
   data: {
     detailData: {}
@@ -8,7 +8,7 @@ var detailsEditApp = new Vue({
     handleEdit() {
       fetch('api/details/edit.php', {
         method:'POST',
-        body: JSON.stringify(this.certifData),
+        body: JSON.stringify(this.detailData),
         headers: {
           "Content-Type": "application/json; charset=utf-8"
         }

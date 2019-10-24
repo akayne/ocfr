@@ -85,11 +85,11 @@
     <option>2</option>
   </select>
 </div>
-<table class="table table-sm table-dark" id="detailsApp" v-if="filter.isExp=='' || filter.isExp == d.displayExpireIn(d.dateExpired)">
+<table class="table table-sm table-dark">
   <thead>
     <tr>
-              <th>Employee ID</th>
-              <th>Certification ID</th>
+              <th>Employee Name</th>
+              <th>Certification Name</th>
               <th>Date Achieved</th>
               <th>Expiration Date</th>
               <th>Expired?</th>
@@ -97,7 +97,8 @@
     </tr>
   </thead>
   <tbody>
-        <tr v-for="d in details" @click="handleRowClick(d)">
+        <tr v-for="d in details" @click="handleRowClick(d)"
+        v-if="filter.isExp=='' || filter.isExp == d.displayExpireIn(d.dateExpired)">
               <td>{{ d.nameFirst }} {{d.nameLast}} </td>
               <td>{{ d.name }}</td>
               <td>{{ d.dateReceived }}</td>
