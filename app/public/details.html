@@ -99,11 +99,12 @@
     </div>
   </form>
 
+<p><h4>Expired/Valid Certification Filter</h4></p>
 <div class="filter">
-  <select v-model="filter.defExp">
+  <select v-model="filter.isExp">
     <option value="">(all)</option>
-    <option>in 9 months</option>
-    <option>2</option>
+    <option>Expired</option>
+    <option>Valid</option>
   </select>
 </div>
 <table class="table table-sm table-dark">
@@ -113,17 +114,19 @@
               <th>Certification Name</th>
               <th>Date Achieved</th>
               <th>Expiration Date</th>
-              <th>Expired?</th>
+              <th>Certification Valid</th>
+              <th>Expiration Time</th>
               <th>Delete</th>
     </tr>
   </thead>
   <tbody>
         <tr v-for="d in details" @click="handleRowClick(d)"
-        v-if="filter.isExp=='' || filter.isExp == d.displayExpireIn(d.dateExpired)">
+        v-if="filter.isExp=='' || filter.isExp == datewhen(d.dateExpired)">
               <td>{{ d.firstName }} {{d.lastName}} </td>
               <td>{{ d.name }}</td>
               <td>{{ d.dateReceived }}</td>
               <td>{{ d.dateExpired }}</td>
+              <td>{{ datewhen(d.dateExpired) }}</td>
               <td>{{ displayExpireIn(d.dateExpired) }}</td>
               <td>
                 <form @submit.prevent="handleDelete(d)">

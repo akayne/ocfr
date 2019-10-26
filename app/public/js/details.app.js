@@ -64,8 +64,14 @@ var detailsApp = new Vue({
     },
 
     datewhen(d) {
-      return moment(d).isAfter();
+      if (moment(d).isAfter() == true) {
+        return "Valid";
+      } else {
+        return "Expired";
+      }
+      //return moment(d).isAfter();
     },
+
 
     handleRowClick(detailData) {
       detailsEditApp.detailData = detailData;
