@@ -48,16 +48,23 @@
   <form @submit.prevent="handleCreate">
 
     <div class="form-group row">
-      <label for="inputpersonId" class="col-sm-2 col-form-label">Employee ID</label>
+      <label for="inputpersonfName" class="col-sm-2 col-form-label">Employee First Name</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputpersonId" placeholder="Employee ID" v-model="recordDetails.personId">
+        <input type="text" class="form-control" id="inputpersonfName" placeholder="Employee First Name" v-model="recordDetails.firstName">
       </div>
     </div>
 
     <div class="form-group row">
-      <label for="inputcertId" class="col-sm-2 col-form-label">Certification ID</label>
+      <label for="inputpersonlName" class="col-sm-2 col-form-label">Employee Last Name</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputcerId" placeholder="Certification ID" v-model="recordDetails.certId">
+        <input type="text" class="form-control" id="inputpersonlName" placeholder="Employee Last Name" v-model="recordDetails.lastName">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputcertName" class="col-sm-2 col-form-label">Certification Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="inputcerName" placeholder="Certification Name" v-model="recordDetails.name">
       </div>
     </div>
 
@@ -103,7 +110,7 @@
   <tbody>
         <tr v-for="d in details" @click="handleRowClick(d)"
         v-if="filter.isExp=='' || filter.isExp == d.displayExpireIn(d.dateExpired)">
-              <td>{{ d.nameFirst }} {{d.nameLast}} </td>
+              <td>{{ d.firstName }} {{d.lastName}} </td>
               <td>{{ d.name }}</td>
               <td>{{ d.dateReceived }}</td>
               <td>{{ d.dateExpired }}</td>

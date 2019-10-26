@@ -8,14 +8,16 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 $stmt = $db->prepare(
   'UPDATE certDetails
-   SET name=?, dateReceived=?, dateExpired=?
-   WHERE firstName = ?'
+   SET firstName = ?, lastName = ?, name=?, dateReceived=?, dateExpired=?
+   WHERE idnum = ?'
 );
 $stmt->execute([
+  $_POST['firstName'],
+  $_POST['lastName'],
   $_POST['name'],
   $_POST['dateReceived'],
   $_POST['dateExpired'],
-  $_POST['firstName']
+  $_POST['idnum']
 ]);
 
 // Step 4: Output
