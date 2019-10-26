@@ -3,28 +3,32 @@ color:black
 }
 
 h1{
-    color: black;
-    font-size: 50px;
-    font-weight: bold;
-}
-
-p{
-  color: Black;
-  font-size: 15px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  background-color:#404040;
+  padding: 7px;
+  text-align: left;
 }
 
 h2{
-    color: Black;
-    font-size: 40px;
-    font-weight: bold;
-  }
+  color: black;
+  font-size: 40px;
+  font-weight: bold;
+  background-color:white;
+  text-align: center;
+}
+
+p{
+  color: white;
+  font-size: 15px;
+}
 
 h3{
     color: black;
     font-size: 25px;
     font-style: italic;
-    padding-right: 18px;
-    padding-left: 18px;
+    text-align: center;
   }
 
 a {
@@ -54,9 +58,30 @@ div {
 }
 
 .footer {
-  padding: 50px;
+  background: #303036;
+  color: #d3d3d3;
+  height: 200px;
+  position: relative;
+}
+
+.footer .footer-content {
+  height: 350px;
+  display: flex;
+}
+
+.footer .footer-content .footer-section{
+  flex: 1;
+  padding: 25px;
+}
+
+.footer .footer-bottom {
+  background: #343a40;
+  color: #686868;
+  height: 50px;
   width: 100%;
-  color: white;
-  background-color: nevy;
   text-align: center;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  padding-top: 20px;
 }
